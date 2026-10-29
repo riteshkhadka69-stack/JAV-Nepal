@@ -1,0 +1,12 @@
+# JAV Nepal — crawler directives.
+#
+# NOTE: this site still shows "pending" placeholders for contact details and
+# every product specification. If it is deployed to a public URL before that
+# content is supplied, consider disallowing crawling until launch by replacing
+# the Allow line below with:  Disallow: /
+#
+# Add a Sitemap line once siteConfig.siteUrl is known, e.g.
+#   Sitemap: https://example.com/sitemap.xml
+
+User-agent: *
+Allow: /

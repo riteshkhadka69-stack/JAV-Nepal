@@ -1,0 +1,9 @@
+# SPA fallback for Netlify (and Cloudflare Pages, which reads the same file).
+#
+# This app uses BrowserRouter, so routes like /products/interactive-flat-panel-65
+# exist only in the client. Without this rule a hard refresh or a shared deep
+# link asks the host for a file that is not there and returns a 404.
+#
+# Other hosts need their own equivalent — see vercel.json in the project root,
+# and the notes in src/App.jsx for Apache and Nginx.
+/*  /index.html  200
