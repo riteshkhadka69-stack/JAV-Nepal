@@ -70,9 +70,8 @@ function Home() {
 
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-200">
                 {siteConfig.name} supplies and installs interactive flat panels
-                and projector-based boards across Nepal. We help you match the
-                right display size to your room, then handle installation and
-                handover.
+                across Nepal. We help you match the right display size to your
+                room, then handle installation and handover.
               </p>
 
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -185,11 +184,12 @@ function Home() {
         <div className="container-page">
           <SectionHeading
             eyebrow="Product range"
-            title="Three ways to equip a room"
-            description="Interactive flat panels, projector-based boards, or the mounts and modules that complete an installation."
+            title="Two ways to equip a room"
+            description="Interactive flat panels, or the mounts and modules that complete an installation."
           />
 
-          <ul className="mt-12 grid gap-6 lg:grid-cols-3">
+          {/* Two columns, matching the number of categories. */}
+          <ul className="mt-12 grid gap-6 sm:grid-cols-2">
             {productCategories.map((category) => {
               const count = products.filter(
                 (product) => product.categoryId === category.id,

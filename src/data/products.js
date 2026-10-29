@@ -138,12 +138,6 @@ export const productCategories = [
       "All-in-one touch displays that replace a projector, screen and whiteboard with a single unit.",
   },
   {
-    id: "projector-board",
-    label: "Projector-based boards",
-    description:
-      "Interactive whiteboard surfaces paired with an ultra-short-throw projector.",
-  },
-  {
     id: "accessories",
     label: "Mounts and accessories",
     description:
@@ -233,88 +227,6 @@ export const products = [
       "Delivery access should be confirmed during the site survey",
     ],
     specGroups: flatPanelSpecGroups(86),
-    inTheBox: [PENDING],
-    image: null,
-    isPlaceholder: true,
-  },
-  {
-    id: "iwb-ust",
-    slug: "interactive-whiteboard-ust-projector",
-    name: "Interactive Whiteboard with Ultra-Short-Throw Projector",
-    categoryId: "projector-board",
-    sizeInches: null,
-    summary:
-      "Projector-and-surface configuration, typically specified where a very large image is needed at lower cost per inch.",
-    overview:
-      "This configuration pairs a touch-sensitive board surface with an ultra-short-throw projector mounted directly above it. It produces a larger image for a given budget than a flat panel of equivalent size, with the trade-offs common to projection: the lamp or laser light source is a consumable, ambient light affects the image, and the projector needs periodic alignment.",
-    bestFor: [
-      "Very large image sizes",
-      "Budget-constrained rollouts",
-      "Rooms with controlled lighting",
-    ],
-    highlights: [
-      "Larger image size for a given budget than a flat panel",
-      "Ultra-short-throw mounting reduces presenter shadow and glare",
-      "Light source is a consumable — factor replacement into running costs",
-    ],
-    specGroups: [
-      {
-        title: "Board surface",
-        specs: specs([
-          "Active board area",
-          "Aspect ratio",
-          "Touch technology",
-          "Simultaneous touch points",
-          "Surface material and finish",
-          "Included pens",
-        ]),
-      },
-      {
-        title: "Projector",
-        specs: specs([
-          "Projection technology",
-          "Light source type",
-          "Rated light-source life",
-          "Brightness",
-          "Native resolution",
-          "Contrast ratio",
-          "Throw ratio",
-          "Keystone correction range",
-          "Rated fan noise",
-        ]),
-      },
-      {
-        title: "Connectivity",
-        specs: specs([
-          "HDMI inputs",
-          "VGA input",
-          "USB ports",
-          "Audio input / output",
-          "RS232 control port",
-          "Network control support",
-        ]),
-      },
-      {
-        title: "Physical and power",
-        specs: specs([
-          "Board dimensions",
-          "Projector dimensions",
-          "Combined net weight",
-          "Mounting arm type",
-          "Operating voltage",
-          "Rated power consumption",
-        ]),
-      },
-      {
-        title: "Warranty and support",
-        specs: specs([
-          "Board warranty period",
-          "Projector warranty period",
-          "Light-source warranty period",
-          "Consumable and spare-parts availability",
-        ]),
-      },
-    ],
     inTheBox: [PENDING],
     image: null,
     isPlaceholder: true,
@@ -517,9 +429,9 @@ export const getRelatedProducts = (slug, limit = 3) => {
   return [...sameCategory, ...others].slice(0, limit);
 };
 
-/** Products chosen for the homepage strip. */
+/** Products chosen for the homepage strip. Three ids keeps the grid full. */
 export const getFeaturedProducts = () =>
-  ["ifp-65", "ifp-75", "iwb-ust"]
+  ["ifp-65", "ifp-75", "ifp-86"]
     .map((id) => products.find((product) => product.id === id))
     .filter(Boolean);
 

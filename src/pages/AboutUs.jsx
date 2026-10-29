@@ -146,11 +146,10 @@ function AboutUs() {
               />
               <div className="mt-5 space-y-4 text-base leading-relaxed text-navy-600">
                 <p>
-                  {siteConfig.name} works with interactive flat panels,
-                  projector-based boards and the mounts, stands and PC modules
-                  that complete an installation. Most of our work involves
-                  replacing projector-and-whiteboard setups with a single touch
-                  display.
+                  {siteConfig.name} works with interactive flat panels and the
+                  mounts, stands and PC modules that complete an installation.
+                  Most of our work involves replacing projector-and-whiteboard
+                  setups with a single touch display.
                 </p>
                 <p>
                   A display project is rarely just a hardware purchase. The

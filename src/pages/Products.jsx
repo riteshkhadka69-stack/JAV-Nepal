@@ -18,7 +18,7 @@ function Products() {
     title: "Products",
     path: "/products",
     description:
-      "Interactive flat panels in 55, 65, 75 and 86 inch size classes, projector-based interactive whiteboards, and the mounts, stands and PC modules that complete an installation.",
+      "Interactive flat panels in 55, 65, 75 and 86 inch size classes, plus the mounts, stands and PC modules that complete an installation.",
   });
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -80,9 +80,8 @@ function Products() {
             Products
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-navy-200">
-            Interactive flat panels, projector-based boards and the mounts and
-            modules that go with them. Select a product to see its full
-            specification sheet.
+            Interactive flat panels and the mounts and modules that go with
+            them. Select a product to see its full specification sheet.
           </p>
 
           <p className="mt-8 flex flex-wrap items-center gap-2.5 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-navy-200">
@@ -141,9 +140,14 @@ function Products() {
 
           {/* Active category description + result count */}
           <div className="flex flex-col gap-2 py-6 sm:flex-row sm:items-center sm:justify-between">
+            {/* A URL can name a category that no longer exists — an old link
+                or bookmark. Saying "the complete range" above an empty grid
+                would contradict itself, so only describe a real selection and
+                let ProductGrid's empty state do the explaining. */}
             <p className="max-w-2xl text-sm text-navy-600">
-              {activeCategoryRecord?.description ??
-                "The complete range across all categories."}
+              {activeCategory === "all"
+                ? "The complete range across all categories."
+                : activeCategoryRecord?.description}
             </p>
             {/* Announced on filter change for screen-reader users. */}
             <p
